@@ -1,4 +1,4 @@
-message: Hello Eureka
+message: Hello Sambit Eureka
 eureka:
   client:
     registerWithEureka: false
