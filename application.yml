@@ -7,6 +7,10 @@ info:
 debug: true
 
 eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 3
+    metadataMap:
+      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
   client:
     serviceUrl:
       defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
@@ -18,5 +22,6 @@ eureka:
   instance:
     hostname: ${APPLICATION_DOMAIN}
     nonSecurePort: 80
+
 
 	
